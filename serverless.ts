@@ -6,7 +6,7 @@ const serverlessConfiguration: AWS = {
   plugins: ['serverless-esbuild', 'serverless-dynamodb-local', 'serverless-offline'],
   provider: {
     name: 'aws',
-    runtime: 'nodejs16.x',
+    runtime: 'nodejs14.x',
     region: "us-east-1",
     apiGateway: {
       minimumCompressionSize: 1024,
