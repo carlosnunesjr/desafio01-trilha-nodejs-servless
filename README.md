@@ -11,12 +11,12 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Node.js](https://nodejs.org/en/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Serverless Framework](serverless.com/)
-[//]: # - [Puppeteer](https://github.com/puppeteer/puppeteer)  
-[//]: # - [Amazon Lambda](https://aws.amazon.com/pt/lambda/)  
+<!-- - [Puppeteer](https://github.com/puppeteer/puppeteer)  
+ - [Amazon Lambda](https://aws.amazon.com/pt/lambda/) --> 
 
 ## 💻 Projeto
 
-[//]: # O projeto tem como responsabilidade gerar um certificado para um usuário e a possibilidade de pesquisar a validade de um certificado.
+<!-- O projeto tem como responsabilidade gerar um certificado para um usuário e a possibilidade de pesquisar a validade de um certificado.-->
 O projeto tem como responsabilidade criar tarefas e listar tarefas de um usuário
 
 ## 🚀 Como executar
