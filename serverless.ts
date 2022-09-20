@@ -35,7 +35,7 @@ const serverlessConfiguration: AWS = {
   },
   // import the function via paths
   functions: {
-    hello: {
+    /*hello: {
       handler: "src/functions/hello.handler",
       events: [
         {
@@ -61,6 +61,45 @@ const serverlessConfiguration: AWS = {
         }
       ]
     },
+    verifyCertificate: {
+      handler: "src/functions/verifyCertificate.handler",
+      events: [
+        {
+          http: {
+            path: "verifyCertificate/{id}",
+            method: "get",
+
+            cors: true
+          }
+        }
+      ]
+    },*/
+    createTodo: {
+      handler: "src/functions/createTodo.handler",
+      events: [
+        {
+          http: {
+            path: "/todos/{userid}",
+            method: "post",
+
+            cors: true
+          }
+        }
+      ]
+    },
+    listTodo: {
+      handler: "src/functions/listTodo.handler",
+      events: [
+        {
+          http: {
+            path: "/todos/{userid}",
+            method: "get",
+
+            cors: true
+          }
+        }
+      ]
+    }
   },
   package: { individually: true },
   custom: {
@@ -86,7 +125,7 @@ const serverlessConfiguration: AWS = {
   },
   resources: {
     Resources: {
-      dbCertificateUsers: {
+      /*dbCertificateUsers: {
         Type: "AWS::DynamoDB::Table",
         Properties: {
           TableName: "users_certificate",
@@ -104,6 +143,36 @@ const serverlessConfiguration: AWS = {
             {
               AttributeName: "id",
               KeyType: "HASH"
+            }
+          ]
+        }
+      },*/
+      dbTodosUsers: {
+        Type: "AWS::DynamoDB::Table",
+        Properties: {
+          TableName: "users_todos",
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 5,
+            WriteCapacityUnits: 5
+          },
+          AttributeDefinitions: [
+            {
+              AttributeName: "user_id",
+              AttributeType: "S"
+            },
+            {
+              AttributeName: "id",
+              AttributeType: "S"
+            }
+          ],
+          KeySchema: [
+            {
+              AttributeName: "user_id",
+              KeyType: "HASH"
+            },
+            {
+              AttributeName: "id",
+              KeyType: "RANGE"
             }
           ]
         }
